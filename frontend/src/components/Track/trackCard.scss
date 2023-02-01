@@ -1,0 +1,93 @@
+.track-card {
+  animation: openCard 200ms ease-in-out forwards;
+  position: fixed;
+  scale: 0;
+  z-index: 3;
+  left: 10%;
+  right: 10%;
+  top: 120px;
+  bottom: 10%;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  padding: 30px;
+  padding-bottom: 0px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+
+  display: flex;
+  justify-content: center;
+  .track-card-btn {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    width: 20px;
+    height: 20px;
+    background-color: rgb(252, 100, 100);
+    border-radius: 50%;
+    padding: 5px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .track-card-btn-svg {
+      display: none;
+    }
+  }
+  .track-card-btn:hover {
+    scale: 1.15;
+    .track-card-btn-svg {
+      display: inline;
+    }
+  }
+  .tracks-card-box {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    padding: 10px;
+    padding-bottom: 0;
+    .tracks-card-box-iframe {
+      margin: 0 auto;
+      border-radius: 20px;
+      background-color: black;
+      //   animation: openYoutubeCard 400ms ease-in-out forwards;
+    }
+    .tracks-card-box-desc {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .tracks-card-box-desc-title {
+      }
+      .tracks-card-box-desc-description {
+        align-self: flex-end;
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        .tracks-card-box-desc-description-title-album {
+        }
+        .tracks-card-box-desc-description-title-artist {
+        }
+      }
+    }
+  }
+  @keyframes openYoutubeCard {
+    0% {
+      left: 40%;
+      right: 40%;
+    }
+    100% {
+      left: 0%;
+      right: 0%;
+    }
+  }
+}
+
+@keyframes openCard {
+  0% {
+    scale: 0;
+  }
+  100% {
+    scale: 1;
+  }
+}

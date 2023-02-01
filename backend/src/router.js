@@ -8,6 +8,11 @@ const tracksController = require("./controllers/tracks.controller");
 
 router.get("/artists", artistsController.getArtists);
 router.get("/artists/:id", artistsController.getArtistById);
+router.get("/artists/:id/albums", artistsController.getAlbumsByIdArtist);
+router.get(
+  "/artists/:idArtist/albums/:idAlbum",
+  artistsController.getTracksOfAlbumsByIdArtist
+);
 router.post("/artists", artistsController.postArtist);
 router.patch("/artists/:id", artistsController.patchArtistById);
 router.delete("/artists/:id", artistsController.deleteArtistById);

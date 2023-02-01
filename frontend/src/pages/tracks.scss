@@ -1,0 +1,73 @@
+@import "../components/Track/trackCard.scss";
+
+.tracks {
+  .tracks-all {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding: 30px;
+    .tracks-title {
+      width: fit-content;
+      margin: 0 auto;
+      color: rgb(127, 95, 0);
+      padding: 15px 50px;
+      font-weight: bold;
+      box-shadow: inset 3px 4px 6px rgba(0, 0, 0, 0.3);
+      border-radius: 10px;
+    }
+    .tracks-cards {
+      cursor: pointer;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 50px;
+      .tracks-cards-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 30px;
+        // min-height: 250px;
+
+        background-color: rgb(255, 255, 255);
+        border-radius: 10px;
+        padding: 30px;
+        padding-bottom: 10px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+          rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+          rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+        transition: all 200ms ease-in-out;
+        // .tracks-cards-card-iframe {
+        // }
+        .tracks-cards-card-title-track {
+          width: 200px;
+          word-wrap: break-word;
+        }
+        .tracks-cards-card-desc {
+          align-self: flex-end;
+          font-size: 1.5rem;
+          margin-bottom: 10px;
+          .tracks-cards-card-desc-title-album {
+          }
+          .tracks-cards-card-desc-title-artist {
+          }
+        }
+      }
+      .tracks-cards-card:hover {
+        scale: 1.02;
+      }
+    }
+  }
+}
+
+.faded:nth-child(n + 2) {
+  .tracks-all {
+    opacity: 30%;
+    .tracks-cards {
+      cursor: default;
+      .tracks-cards-card {
+        pointer-events: none;
+      }
+    }
+  }
+}

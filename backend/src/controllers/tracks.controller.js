@@ -17,10 +17,10 @@ const getTrackById = (req, res) => {
 };
 
 const postTrack = (req, res) => {
-  const { title, youtubeUrl, fkIdAlbum } = req.body;
+  const { titleTrack, youtubeUrl, fkIdAlbum } = req.body;
 
   tracksModel
-    .postTrack(title, youtubeUrl, fkIdAlbum)
+    .postTrack(titleTrack, youtubeUrl, fkIdAlbum)
     .then(([result]) => {
       return res
         .location(`/tracks/${result.insertId}`)

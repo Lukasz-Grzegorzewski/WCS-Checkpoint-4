@@ -15,26 +15,48 @@ const getArtistById = (req, res) => {
     .catch((err) => console.error(err));
 };
 
-const postArtist = (req, res) => {
-  const { name } = req.body;
+const getAlbumsByIdArtist = (req, res) => {
+  const id = parseInt(req.params.id, 10);
+  artistsModel
+    .getAlbumsByIdArtist(id)
+    .then(([albums]) => res.status(200).send(albums))
+    .catch((err) => console.error(err));
+};
+
+const getTracksOfAlbumsByIdArtist = (req, res) => {
+  const idArtist = parseInt(req.params.idArtist, 10);
+  const idAlbum = parseInt(req.params.idAlbum, 10);
 
   artistsModel
-    .postArtist(name)
-    .then(([result]) => {
-      return res
-        .location(`/artists/${result.insertId}`)
-        .status(201)
-        .send({ message: "artist added" });
+    .getTracksOfAlbumsByIdArtist(idArtist, idAlbum)
+    .then(([tracks]) => res.status(200).send(tracks))
+    .catch((err) => console.error(err));
+};
+
+const postArtist = (req, res) => {
+  const { name, imageUrl } = req.body;
+
+  artistsModel
+    .postArtist(name, imageUrl)
+    .then(() => {
+      return (
+        res
+          // .location(`/artists/${result.insertId}`)
+          .status(201)
+          .send({ message: "artist added" })
+      );
     })
     .catch((err) => console.warn(err));
 };
 
 const patchArtistById = (req, res) => {
   const id = parseInt(req.params.id, 10);
-  const { name } = req.body;
+  const { body } = req;
+
+  const reqBodyKeysArr = Object.keys(req.body);
 
   artistsModel
-    .patchArtistById(id, name)
+    .patchArtistById(id, body, reqBodyKeysArr)
     .then(([result]) => {
       return result.affectedRows === 0
         ? res.status(404).send("artist Not Found")
@@ -67,6 +89,8 @@ const deleteArtistById = (req, res) => {
 module.exports = {
   getArtists,
   getArtistById,
+  getAlbumsByIdArtist,
+  getTracksOfAlbumsByIdArtist,
   postArtist,
   patchArtistById,
   deleteArtistById,

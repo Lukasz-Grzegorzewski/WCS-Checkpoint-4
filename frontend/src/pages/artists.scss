@@ -1,0 +1,47 @@
+.artists {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 30px;
+  .title-artists-container {
+    width: fit-content;
+    margin: 0 auto;
+    .title-artists {
+      color: rgb(127, 95, 0);
+      padding: 15px 50px;
+      font-weight: bold;
+      box-shadow: inset 3px 4px 6px rgba(0, 0, 0, 0.3);
+      border-radius: 10px;
+    }
+  }
+  .cards {
+    cursor: pointer;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+    .card-artist {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 250px;
+
+      background-color: rgb(255, 255, 255);
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+        rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+        rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+      transition: all 200ms ease-in-out;
+      .img-artist {
+        width: 220px;
+      }
+      .title-artist {
+      }
+    }
+    .card-artist:hover {
+      scale: 1.02;
+    }
+  }
+}

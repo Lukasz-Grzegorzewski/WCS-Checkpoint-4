@@ -1,18 +1,19 @@
 const db = require("../../DB");
 
 const getTracks = () => {
-  return db.query("SELECT * FROM track");
+  return db.query(
+    " SELECT * FROM track INNER JOIN album ON track.fk_id_album = album.id_album INNER JOIN artist ON album.fk_id_artist = artist.id_artist;"
+  );
 };
 
 const getTrackById = (id) => {
-  console.warn("lala");
   return db.query("SELECT * FROM track WHERE id_track = ?", [id]);
 };
 
-const postTrack = (title, youtubeUrl, fkIdAlbum) => {
+const postTrack = (titleTrack, youtubeUrl, fkIdAlbum) => {
   return db.query(
-    "INSERT INTO track( title, youtube_url, fk_id_album ) VALUES ( ?, ?, ? )",
-    [title, youtubeUrl, fkIdAlbum]
+    "INSERT INTO track( title_track, youtube_url, fk_id_album ) VALUES ( ?, ?, ? )",
+    [titleTrack, youtubeUrl, fkIdAlbum]
   );
 };
 
@@ -27,9 +28,9 @@ const patchTrackById = (id, reqBodyKeysArr, body) => {
     }
 
     switch (item) {
-      case "title":
-        sql += " title = ";
-        sql += `"${body.title} "`;
+      case "title_track":
+        sql += " title_track = ";
+        sql += `"${body.titleTrack} "`;
         break;
       case "youtubeUrl":
         sql += " youtube_url = ";
