@@ -1,1 +1,8 @@
 node_modules
+
+rest.track.http
+rest.artist.http
+rest.album.http
+
+
+.DS_Store

@@ -1,0 +1,14 @@
+.button-go-back {
+  position: fixed;
+  top: 120px;
+  left: 20px;
+  .button-go-back-btn {
+    background-color: transparent;
+    transition: all 200ms ease-in-out;
+    .button-go-back-btn-svg {
+    }
+  }
+  .button-go-back-btn:hover {
+    scale: 1.1;
+  }
+}
