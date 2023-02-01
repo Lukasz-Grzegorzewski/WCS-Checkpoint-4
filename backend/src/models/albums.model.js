@@ -1,18 +1,19 @@
 const db = require("../../DB");
 
 const getAlbums = () => {
-  return db.query("SELECT * FROM album");
+  return db.query(
+    "SELECT * FROM album INNER JOIN artist ON album.fk_id_artist = artist.id_artist;"
+  );
 };
 
 const getAlbumById = (id) => {
-  console.warn("lala");
   return db.query("SELECT * FROM album WHERE id_album = ?", [id]);
 };
 
-const postAlbum = (title, genre, picture, fkIdArtist) => {
+const postAlbum = (titleAlbum, genre, picture, fkIdArtist) => {
   return db.query(
-    "INSERT INTO album( title, genre, picture, fk_id_artist ) VALUES ( ?, ?, ?, ? )",
-    [title, genre, picture, fkIdArtist]
+    "INSERT INTO album( title_album, genre, picture, fk_id_artist ) VALUES ( ?, ?, ?, ? )",
+    [titleAlbum, genre, picture, fkIdArtist]
   );
 };
 
@@ -28,21 +29,17 @@ const patchAlbumById = (id, reqBodyKeysArr, body) => {
     }
 
     switch (item) {
-      case "title":
-        sql += " title = ";
-        sql += `"${body.title}"`;
+      case "title_album":
+        sql += ` title_album =  "${body.titleAlbum}"`;
         break;
       case "genre":
-        sql += " genre = ";
-        sql += `"${body.genre}"`;
+        sql += ` genre = "${body.genre}"`;
         break;
       case "picture":
-        sql += " picture = ";
-        sql += `"${body.picture}"`;
+        sql += ` picture = "${body.picture}"`;
         break;
       case "fkIdArtist":
-        sql += " fk_id_artist = ";
-        sql += `"${body.fkIdArtist}"`;
+        sql += ` fk_id_artist = "${body.fkIdArtist}"`;
         break;
       default:
         break;

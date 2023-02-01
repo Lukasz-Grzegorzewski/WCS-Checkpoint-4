@@ -16,10 +16,10 @@ const getAlbumById = (req, res) => {
 };
 
 const postAlbum = (req, res) => {
-  const { title, genre, picture, fkIdArtist } = req.body;
+  const { titleAlbum, genre, picture, fkIdArtist } = req.body;
 
   albumsModel
-    .postAlbum(title, genre, picture, fkIdArtist)
+    .postAlbum(titleAlbum, genre, picture, fkIdArtist)
     .then(([result]) => {
       return res
         .location(`/albums/${result.insertId}`)

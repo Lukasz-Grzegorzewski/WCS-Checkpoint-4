@@ -15,16 +15,17 @@ DROP TABLE IF EXISTS `checkpoint4`.`artist` ;
 CREATE TABLE IF NOT EXISTS `checkpoint4`.`artist` (
   `id_artist` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(255) NOT NULL,
+  `image_url` VARCHAR(255) NOT NULL,
   PRIMARY KEY (`id_artist`),
   UNIQUE INDEX `id_artist_UNIQUE` (`id_artist` ASC) VISIBLE)
 ENGINE = InnoDB;
 
 INSERT INTO
-  `checkpoint4`.`artist` ( name )
+  `checkpoint4`.`artist` ( name, image_url )
 VALUES
-  ( 'Metallica'),
-  ( 'The Beatles' ),
-  ( 'Michael Jackson' );
+  ( 'Metallica', 'https://upload.wikimedia.org/wikipedia/commons/b/b7/Metallica_logo.png' ),
+  ( 'The Beatles', 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/The_Beatles_logo.svg/1200px-The_Beatles_logo.svg.png' ),
+  ( 'Michael Jackson', 'https://1000logos.net/wp-content/uploads/2020/10/Michael-Jackson-Logo.png' );
 
 -- -----------------------------------------------------
 -- Table `checkpoint4`.`album`
@@ -33,7 +34,7 @@ DROP TABLE IF EXISTS `checkpoint4`.`album` ;
 
 CREATE TABLE IF NOT EXISTS `checkpoint4`.`album` (
   `id_album` INT NOT NULL AUTO_INCREMENT,
-  `title` VARCHAR(255) NOT NULL,
+  `title_album` VARCHAR(255) NOT NULL,
   `genre` VARCHAR(255) NOT NULL,
   `picture` VARCHAR(255) NOT NULL,
   `fk_id_artist` INT NOT NULL,
@@ -48,7 +49,7 @@ CREATE TABLE IF NOT EXISTS `checkpoint4`.`album` (
 ENGINE = InnoDB;
 
 INSERT INTO
-  `checkpoint4`.`album` (title, genre, picture, fk_id_artist )
+  `checkpoint4`.`album` (title_album, genre, picture, fk_id_artist )
 VALUES
   ( 'The Black Album', 'Heavymetal' ,'https://i.ytimg.com/vi/DqDeH3hwxfw/maxresdefault.jpg', 1),
   ( 'Reload', 'Heavymetal' ,'https://townsquare.media/site/366/files/2016/11/Metallica-Reload-Anniversary.jpg?w=1200&h=0&zc=1&s=0&a=t&q=89', 1),
@@ -63,7 +64,7 @@ DROP TABLE IF EXISTS `checkpoint4`.`track` ;
 
 CREATE TABLE IF NOT EXISTS `checkpoint4`.`track` (
   `id_track` INT NOT NULL AUTO_INCREMENT,
-  `title` VARCHAR(128) NOT NULL,
+  `title_track` VARCHAR(128) NOT NULL,
   `youtube_url` VARCHAR(255) NOT NULL,
   `fk_id_album` INT NOT NULL,
   PRIMARY KEY (`id_track`),
@@ -77,7 +78,7 @@ CREATE TABLE IF NOT EXISTS `checkpoint4`.`track` (
 ENGINE = InnoDB;
 
 INSERT INTO
-  `checkpoint4`.`track` (title, youtube_url, fk_id_album )
+  `checkpoint4`.`track` (title_track, youtube_url, fk_id_album )
 VALUES
   ( 'Enter Sandman', 'https://www.youtube.com/watch?v=CD-E-LDc384', 1),
   ( 'Sad but True', 'https://www.youtube.com/watch?v=A8MO7fkZc5o', 1),

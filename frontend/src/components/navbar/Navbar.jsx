@@ -5,7 +5,7 @@ import logoLongWhite from "../../assets/images/Checkpoint-4-white.png";
 function Navbar() {
   return (
     <div className="navbar">
-      <NavLink to="/">
+      <NavLink className="logo-container" to="/">
         <img className="logo" src={logoLongWhite} alt="logo" />
       </NavLink>
       <div className="nav-links-container">
