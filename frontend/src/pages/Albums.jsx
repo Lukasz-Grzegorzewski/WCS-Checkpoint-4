@@ -27,6 +27,7 @@ function Albums() {
         {albums.length > 0 &&
           albums.map((album) => (
             <NavLink
+              key={album.id_album}
               className="albums-cards-card"
               to={`/artists/${album.id_artist}/albums/${album.id_album}`}
             >
