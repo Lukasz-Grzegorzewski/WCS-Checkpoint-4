@@ -2,3 +2,87 @@
 $primary-color: #ffffff;
 $secondary-color: #8e5524;
 $tertiary-color: #000000;
+
+// HEADER TITLE
+
+.header-title {
+  width: fit-content;
+  text-align: center;
+  margin: 0 auto;
+  color: rgb(127, 95, 0);
+  padding: 15px 50px;
+  font-weight: bold;
+  box-shadow: inset 3px 4px 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+// BUTTONS
+
+.btn-navbar {
+  cursor: pointer;
+  color: rgb(209, 209, 209);
+  font-size: 2rem;
+  padding: 5px;
+  border-radius: 10px;
+  box-shadow: rgba(10, 37, 64, 0.638) 0px -2px 6px 0px inset;
+  background-color: rgb(127, 95, 0);
+  transition: all 200ms ease-in-out;
+}
+
+// CARD
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 30px;
+  //   scale: .8;
+  max-width: 200px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  transition: all 200ms ease-in-out;
+
+  .img-card {
+    max-width: 220px;
+  }
+
+  .card-desc {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 30px;
+    .card-album {
+      align-self: flex-start;
+    }
+    .card-artist {
+      font-size: 1.8rem;
+      align-self: flex-end;
+    }
+  }
+}
+.card:hover {
+  scale: 1.02;
+}
+
+@media screen and (min-width: 600px) {
+  // HEADER TITLE
+
+  // BUTTONS
+  .btn-navbar {
+    font-size: 3rem;
+    padding: 10px;
+  }
+  .btn-navbar:hover {
+    scale: 1.05;
+    background-color: rgb(148, 111, 0);
+  }
+
+  // CARD
+  .card {
+    max-width: 280px;
+  }
+}

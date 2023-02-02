@@ -1,0 +1,19 @@
+.add-artist {
+  width: 100%;
+  .form-add-artist {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    .inp {
+      padding: 10px;
+      border-radius: 5px;
+    }
+    .input-add-artist {
+    }
+    .btn-submit {
+      font-size: 1.8rem;
+      padding: 10px;
+    }
+  }
+}
