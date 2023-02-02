@@ -26,7 +26,7 @@ const postAlbum = (req, res) => {
         .status(201)
         .send({ message: "album added" });
     })
-    .catch((err) => console.warn(err));
+    .catch((err) => console.error(err));
 };
 
 const patchAlbumById = (req, res) => {
@@ -45,7 +45,7 @@ const patchAlbumById = (req, res) => {
     })
 
     .catch((err) => {
-      console.warn(err);
+      console.error(err);
       return res.status(500).send("Error editing an album");
     });
 };
@@ -54,7 +54,7 @@ const deleteAlbumById = (req, res) => {
   const id = parseInt(req.params.id, 10);
 
   albumsModel
-    .deleteAlbum(id)
+    .deleteAlbumById(id)
     .then(([album]) => {
       return album.affectedRows === 0
         ? res.status(404).send("album Not Found")

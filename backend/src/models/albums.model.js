@@ -23,13 +23,12 @@ const patchAlbumById = (id, reqBodyKeysArr, body) => {
   if (!reqBodyKeysArr) return console.warn("no body to patch an album");
 
   reqBodyKeysArr.forEach((item, index) => {
-    console.warn("item : ", item);
     if (index > 0) {
       sql += ",";
     }
 
     switch (item) {
-      case "title_album":
+      case "titleAlbum":
         sql += ` title_album =  "${body.titleAlbum}"`;
         break;
       case "genre":
@@ -39,12 +38,13 @@ const patchAlbumById = (id, reqBodyKeysArr, body) => {
         sql += ` picture = "${body.picture}"`;
         break;
       case "fkIdArtist":
-        sql += ` fk_id_artist = "${body.fkIdArtist}"`;
+        sql += ` fk_id_artist = ${body.fkIdArtist}`;
         break;
       default:
         break;
     }
   });
+
   sql += " WHERE id_album = ?;";
 
   return db.query(sql, [id]);

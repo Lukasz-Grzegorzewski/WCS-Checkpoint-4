@@ -1,0 +1,108 @@
+.menu-burger {
+  .links-container {
+    position: absolute;
+    top: 60px;
+    right: -200px;
+    z-index: 10;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    background-color: rgb(68, 61, 49);
+    border-radius: 0 0 0 10px;
+    padding: 10px 30px;
+  }
+
+  .links-container.opened {
+    animation: openMenuBurger 400ms forwards ease-in-out;
+  }
+  @keyframes openMenuBurger {
+    0% {
+      right: -200px;
+    }
+    100% {
+      right: 0px;
+    }
+  }
+  .links-container.closed {
+    animation: closeMenuBurger 400ms forwards ease-in-out;
+  }
+  @keyframes closeMenuBurger {
+    0% {
+      right: 0px;
+    }
+    100% {
+      right: -200px;
+    }
+  }
+
+  .burger {
+    all: unset;
+    height: 20px;
+    width: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+    padding: 5px;
+    .bar {
+      height: 2px;
+      background-color: $primary-color;
+      box-shadow: 0 0 5px 3px $secondary-color;
+    }
+    .bar1 {
+      position: absolute;
+      top: 0;
+      width: 30px;
+    }
+    .bar2 {
+      position: absolute;
+      top: 45%;
+      opacity: 1;
+      width: 40px;
+    }
+    .bar3 {
+      position: absolute;
+      top: 90%;
+      width: 20px;
+    }
+  }
+
+  .burger.inactive {
+    .bar1 {
+      width: 30px;
+      rotate: 0deg;
+      transition: all 500ms ease-in-out;
+    }
+    .bar2 {
+      width: 40px;
+      opacity: 1;
+      transition: all 500ms ease-in-out;
+    }
+    .bar3 {
+      width: 20px;
+      rotate: 0deg;
+      transition: all 500ms ease-in-out;
+    }
+  }
+  .burger.active {
+    .bar1 {
+      rotate: -45deg;
+      top: 50%;
+      width: 30px;
+      transition: all 500ms ease-in-out;
+    }
+    .bar2 {
+      opacity: 0;
+    }
+    .bar3 {
+      //   position: absolute;
+      rotate: 45deg;
+      top: 50%;
+      transition: all 500ms ease-in-out;
+      width: 30px;
+    }
+  }
+}

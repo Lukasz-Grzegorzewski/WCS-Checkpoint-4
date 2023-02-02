@@ -1,0 +1,30 @@
+.patch-album {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+
+  .admin-select-albums {
+    align-self: center;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  .form-patch-album {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    .inp {
+      padding: 10px;
+      border-radius: 5px;
+    }
+    .input-patch-album {
+    }
+    .btn-submit {
+      font-size: 1.8rem;
+      padding: 10px;
+    }
+  }
+}

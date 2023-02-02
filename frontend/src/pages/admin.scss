@@ -1,0 +1,51 @@
+@import "../components/admin/artist/adminArtists.scss";
+@import "../components/admin/album/adminAlbums.scss";
+@import "../components/admin/track/adminTracks.scss";
+
+.admin {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  .tabs-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    .header-title {
+      font-size: 2rem;
+      padding: 10px 20px;
+      cursor: pointer;
+      // transition: all 100ms ease-in-out;
+      box-shadow: rgba(10, 37, 64, 0.638) 0px -2px 6px 0px inset;
+      background-color: rgb(127, 95, 0);
+      color: white;
+    }
+    .header-title.active {
+      cursor: pointer;
+      transition: all 100ms ease-in-out;
+      box-shadow: inset 3px 4px 6px rgba(0, 0, 0, 0.3);
+      color: rgb(127, 95, 0);
+      background-color: white;
+      p {
+        transform: translate(2px, 2px);
+        transition: all 200ms ease-in-out;
+      }
+    }
+
+    .header-title:not(.active):hover {
+      box-shadow: inset 3px 4px 6px rgba(0, 0, 0, 0.3);
+      color: rgb(127, 95, 0);
+      background-color: white;
+      p {
+        transform: translate(2px, 2px);
+        transition: all 200ms ease-in-out;
+      }
+    }
+  }
+  .update-container {
+    border-radius: 20px;
+    width: 95%;
+    border: 2px solid rgb(127, 95, 0);
+    padding: 10px;
+  }
+}

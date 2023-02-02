@@ -20,19 +20,17 @@ function Artists() {
 
   return (
     <div className="artists">
-      <div className="title-artists-container">
-        <h1 className="title-artists">ALL ARTISTS</h1>
-      </div>
+      <h1 className="header-title title-artists-container">ALL ARTISTS</h1>
       <div className="cards">
         {artists.length > 0 &&
           artists.map((artist) => (
             <NavLink
               key={artist.id_artist}
-              className="card-artist"
+              className="card card-artist"
               to={`/artists/${artist.id_artist}`}
             >
               <img
-                className="img-artist"
+                className="img-card img-artist"
                 src={artist.image_url}
                 alt="logo of an artist"
               />

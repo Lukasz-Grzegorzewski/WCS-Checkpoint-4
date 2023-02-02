@@ -11,7 +11,7 @@ function ButtonGoBack() {
   return (
     <div className="button-go-back">
       <button
-        className="button-go-back-btn"
+        className="card button-go-back-btn"
         onClick={() => handleGoBackClick()}
         type="button"
       >
