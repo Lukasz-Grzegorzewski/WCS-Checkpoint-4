@@ -27,7 +27,7 @@ const postTrack = (req, res) => {
         .status(201)
         .send({ message: "track added" });
     })
-    .catch((err) => console.warn(err));
+    .catch((err) => console.error(err));
 };
 
 const patchTrackById = (req, res) => {
@@ -46,7 +46,7 @@ const patchTrackById = (req, res) => {
     })
 
     .catch((err) => {
-      console.warn(err);
+      console.error(err);
       return res.status(500).send("Error editing a track");
     });
 };

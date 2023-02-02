@@ -46,7 +46,7 @@ const postArtist = (req, res) => {
           .send({ message: "artist added" })
       );
     })
-    .catch((err) => console.warn(err));
+    .catch((err) => console.error(err));
 };
 
 const patchArtistById = (req, res) => {
@@ -64,7 +64,7 @@ const patchArtistById = (req, res) => {
     })
 
     .catch((err) => {
-      console.warn(err);
+      console.error(err);
       return res.status(500).send("Error editing an artist");
     });
 };

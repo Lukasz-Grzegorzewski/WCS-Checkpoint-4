@@ -6,6 +6,7 @@ import Artists from "./pages/Artists";
 import ArtistAlbums from "./pages/ArtistAlbums";
 import Albums from "./pages/Albums";
 import Trucks from "./pages/Tracks";
+import Admin from "./pages/Admin";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         />
         <Route path="/albums" element={<Albums />} />
         <Route path="/tracks" element={<Trucks />} />
+        <Route path="/admin" element={<Admin />} />
       </Routes>
     </div>
   );

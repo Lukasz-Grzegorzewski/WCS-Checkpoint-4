@@ -37,24 +37,24 @@ function Tracks() {
       )}
       <div className="tracks-all">
         <ButtonGoBack />
-        <div className="tracks-title">ALL TRACKS</div>
+        <h1 className="header-title tracks-title">ALL TRACKS</h1>
         <div className="tracks-cards">
           {tracks.length > 0 &&
             tracks.map((trk) => (
               <button
                 key={trk.id_track}
-                className="tracks-cards-card"
+                className="card tracks-cards-card"
                 onClick={() => handleTrackClick(trk)}
                 type="button"
               >
-                <p className="tracks-cards-card-desc-title-track">
+                <p className="title-track tracks-cards-card-desc-title-track">
                   {trk.title_track}
                 </p>
-                <div className="tracks-cards-card-desc">
-                  <p className="tracks-cards-card-desc-title-album">
+                <div className="desc tracks-cards-card-desc">
+                  <p className="desc-album tracks-cards-card-desc-title-album">
                     Album : {trk.title_album}
                   </p>
-                  <p className="tracks-cards-card-desc-title-artist">
+                  <p className="desc-artist tracks-cards-card-desc-title-artist">
                     Artist : {trk.name}
                   </p>
                 </div>

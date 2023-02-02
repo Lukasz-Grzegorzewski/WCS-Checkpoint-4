@@ -25,28 +25,28 @@ function ArtistAlbums() {
     <div className="artist-albums">
       <ButtonGoBack />
       {albumsByArtist.length > 0 && (
-        <div className="artist-albums-title">
+        <h1 className="header-title artist-albums-title">
           {albumsByArtist[0].name} <br /> albums
-        </div>
+        </h1>
       )}
       <div className="artist-albums-cards">
         {albumsByArtist.length > 0 &&
           albumsByArtist.map((album) => (
             <NavLink
               key={album.id_album}
-              className="artist-albums-cards-card"
+              className="card artist-albums-cards-card"
               to={`/artists/${album.id_artist}/albums/${album.id_album}`}
             >
               <img
-                className="artist-albums-cards-card-img"
+                className="artist-albums-cards-card-img img-card"
                 src={album.picture}
                 alt="logo of an album"
               />
-              <div className="artist-albums-cards-card-desc">
-                <h2 className="artist-albums-cards-card-title-album">
+              <div className="card-desc artist-albums-cards-card-desc">
+                <h2 className="card-album artist-albums-cards-card-title-album">
                   {album.title_album}
                 </h2>
-                <h2 className="artist-albums-cards-card-title-artist">
+                <h2 className="card-artist artist-albums-cards-card-title-artist">
                   {album.name}
                 </h2>
               </div>

@@ -42,7 +42,7 @@ const patchArtistById = (id, body, reqBodyKeysArr) => {
       case "name":
         sql += ` name = '${body.name}'`;
         break;
-      case "image_url":
+      case "imageUrl":
         sql += ` image_url = '${body.imageUrl}'`;
         break;
       default:

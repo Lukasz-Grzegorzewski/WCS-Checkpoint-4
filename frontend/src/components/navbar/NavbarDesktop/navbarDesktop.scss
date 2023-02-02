@@ -1,0 +1,46 @@
+.navbar-desktop {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 2;
+
+  color: white;
+  background-color: rgb(68, 61, 49);
+
+  padding: 10px 15px 20%;
+
+  .logo-desktop-container {
+    display: flex;
+    align-items: center;
+    padding: 30px 10px;
+    height: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.038);
+    border-right: 1px solid rgba(0, 0, 0, 0.009);
+    .logo-desktop {
+      height: 30px;
+    }
+  }
+  .logo-desktop-container:hover {
+    border-radius: 20px;
+    box-shadow: inset 4px 4px 6px rgba(0, 0, 0, 0.554);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.486);
+    border-right: 1px solid rgba(0, 0, 0, 0.486);
+    transition: all 200ms ease-in-out;
+    .logo-desktop {
+      transition: all 200ms ease-in-out;
+      translate: 3px 3px;
+    }
+  }
+  .nav-links-desktop-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+}

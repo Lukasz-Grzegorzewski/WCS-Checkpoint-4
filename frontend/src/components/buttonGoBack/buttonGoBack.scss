@@ -1,14 +1,23 @@
 .button-go-back {
   position: fixed;
-  top: 120px;
-  left: 20px;
+  z-index: 3;
+  top: 70px;
+  left: 10px;
   .button-go-back-btn {
+    padding: 5px;
     background-color: transparent;
     transition: all 200ms ease-in-out;
     .button-go-back-btn-svg {
     }
   }
   .button-go-back-btn:hover {
-    scale: 1.1;
+    scale: 1.05;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .button-go-back {
+    top: 10px;
+    left: 160px;
   }
 }

@@ -1,31 +1,28 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-import logoLongWhite from "../../assets/images/Checkpoint-4-white.png";
+import React, { useEffect, useState } from "react";
+import NavbarDesktop from "./NavbarDesktop/NavbarDesktop";
+import NavbarMobile from "./NavbarMobile/NavbarMobile";
 
 function Navbar() {
+  const [size, setSize] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      // console.log(window.innerWidth);
+      if (window.innerWidth >= 600) {
+        setSize(true);
+      } else {
+        setSize(false);
+      }
+    });
+    if (window.innerWidth >= 600) {
+      setSize(true);
+    } else {
+      setSize(false);
+    }
+  }, [window.innerWidth]);
+
   return (
-    <div className="navbar">
-      <NavLink className="logo-container" to="/">
-        <img className="logo" src={logoLongWhite} alt="logo" />
-      </NavLink>
-      <div className="nav-links-container">
-        <NavLink to="/artists">
-          <button className="btn btn-artists" type="button">
-            Artists
-          </button>
-        </NavLink>
-        <NavLink to="/albums">
-          <button className="btn btn-albums" type="button">
-            Albums
-          </button>
-        </NavLink>
-        <NavLink to="/tracks">
-          <button className="btn btn-albums" type="button">
-            Tracks
-          </button>
-        </NavLink>
-      </div>
-    </div>
+    <div className="navbar">{size ? <NavbarDesktop /> : <NavbarMobile />}</div>
   );
 }
 

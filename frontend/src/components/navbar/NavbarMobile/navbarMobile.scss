@@ -1,0 +1,29 @@
+@import "./menuBurger/menuBurger.scss";
+
+.navbar-mobile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  color: white;
+  background-color: rgb(68, 61, 49);
+
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 2;
+
+  color: rgb(226, 10, 10);
+  .logo-mobile-container {
+    display: flex;
+    align-items: center;
+    padding: 30px 10px;
+    height: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.038);
+    border-right: 1px solid rgba(0, 0, 0, 0.009);
+    .logo-mobile {
+      height: 30px;
+    }
+  }
+}
