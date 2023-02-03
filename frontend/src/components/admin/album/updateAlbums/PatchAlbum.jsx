@@ -127,7 +127,7 @@ function PatchAlbum() {
             placeholder={selectedAlbum.fkIdArtist}
             onChange={(event) => handleChange("fkIdArtist", event.target.value)}
           />
-          <button className="btn-submit btn-navbar" type="button">
+          <button className="btn-submit btn-navbar" type="submit">
             Update
           </button>
         </form>
