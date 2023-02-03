@@ -82,7 +82,7 @@ function AddAlbum() {
             ))}
           </select>
         )}
-        <button className="btn-submit btn-navbar" type="button">
+        <button className="btn-submit btn-navbar" type="submit">
           Add
         </button>
       </form>

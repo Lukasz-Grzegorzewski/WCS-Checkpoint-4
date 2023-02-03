@@ -13,7 +13,6 @@ function AddArtist() {
 
   function handleSubmit(event) {
     event.preventDefault();
-
     axios
       .post(`${import.meta.env.VITE_PORT_BACKEND}/artists`, newArtist)
       .then(() => {
@@ -45,7 +44,7 @@ function AddArtist() {
           placeholder="image url of a new artist"
           onChange={(event) => handleChange("imageUrl", event.target.value)}
         />
-        <button className="btn-submit btn-navbar" type="button">
+        <button className="btn-submit btn-navbar" type="submit">
           Add
         </button>
       </form>
