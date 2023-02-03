@@ -101,7 +101,7 @@ function PatchArtist() {
             placeholder={selectedArtist.imageUrl}
             onChange={(event) => handleChange("imageUrl", event.target.value)}
           />
-          <button className="btn-submit btn-navbar" type="button">
+          <button className="btn-submit btn-navbar" type="submit">
             Update
           </button>
         </form>

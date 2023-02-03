@@ -47,7 +47,7 @@ function DeleteArtist() {
         <button
           className="btn-submit btn-navbar"
           onClick={() => handleDeleteClick(selectedArtistId)}
-          type="button"
+          type="submit"
         >
           Delete
         </button>
