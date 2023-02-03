@@ -11,7 +11,7 @@ function AddAlbum() {
   });
 
   function handleChange(field, value) {
-    setNewAlbum({ ...newAlbum, [field]: value });
+    if (value) setNewAlbum({ ...newAlbum, [field]: value });
   }
   //   function handlefkIdArtistChange(field, value) {
   //     setNewAlbum({ ...newAlbum, [field]: value });
@@ -24,9 +24,17 @@ function AddAlbum() {
       .post(`${import.meta.env.VITE_PORT_BACKEND}/albums`, newAlbum)
       .then(() => {
         console.warn("album added");
-        // Array.from(document.querySelectorAll("input")).forEach(
-        //   (input.value = "")
-        // );
+        setNewAlbum({
+          titleAlbum: "",
+          genre: "",
+          picture: "",
+          fkIdArtist: null,
+        });
+        const arr = Array.from(document.querySelectorAll("input"));
+
+        for (let i = 0; i < arr.length; i += 1) {
+          arr[i].value = "";
+        }
       })
       .catch((err) => console.error(err));
   }
