@@ -17,9 +17,14 @@ function AddArtist() {
       .post(`${import.meta.env.VITE_PORT_BACKEND}/artists`, newArtist)
       .then(() => {
         console.warn("artist added");
-        // Array.from(document.querySelectorAll("input")).forEach(
-        //   (input.value = "")
-        // );
+        setNewArtistName({
+          name: "",
+          imageUrl: "",
+        });
+        const arr = Array.from(document.querySelectorAll("input"));
+        for (let i = 0; i < arr.length; i += 1) {
+          arr[i].value = "";
+        }
       })
       .catch((err) => console.error(err));
   }
