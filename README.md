@@ -1,16 +1,32 @@
+### First steps :
+
+1. `backend/.env` : create a .env file based on (backend/.env.sample)
+2. `frontend/.env` : create a .env file based on (frontend/.env.sample)
+3. `npm run setup` : Initialization of frontend and backend, as well as all toolings
+4. `npm run migrate` : Run the database migration script
+5. `npm run dev` : Starts both servers (frontend + backend) in one terminal
+
 ## Concept
+    Site created during a Checkpoint 4 at Wild Code School in Nantes.
+The web application collects a list of artist-singers, their albums and songs.
 
-This template is meant to serve as a foundation for every P2/P3 following the React-Express-MySQL stack, as learned in Wild Code School.
-It's pre-configured with a set of tools which'll help students produce industry-quality and easier-to-maintain code, while staying as simple as possible to use.
+SIDE USER
+    There are three main pages in navbar/menu burger that sort the data from the database:
+        `Artists` button that displays a list of all Artists with image
+        `Albums` button that displays a list of all albums with image
+        `Tracks` button that displays a list of all songs with image
+    Choosing:
+        `artist card` - displays a list of albums of this artist with details and image
+        `album card` - displays a list of tracks of this album with details and image
+        `track card` - display a youtube video of this track with details
 
-## Setup & Use
-
-### Project Initialization
-
-- In VSCode, install plugins **Prettier - Code formatter** and **ESLint** and configure them
-- Clone this repo, enter it
-- Run command `npm run setup`
-- _NB: To launch the backend server, you'll need an environment file with database credentials. You'll find a template one in `backend/.env.sample`_
+SIDE ADMIN
+    Admin can fully update the database.
+    Images and youtube videos are based on url.
+    Button `Admin database` in navbar displays three options:
+    `UPDATE ARTISTS`, `UPDATE ALBUMS`, `UPDATE TRACKS` 
+        Each option displays respectively three options :
+            `ADD`, `UPDATE`, `DELETE`
 
 ### Available Commands
 
@@ -22,14 +38,3 @@ It's pre-configured with a set of tools which'll help students produce industry-
 - `lint` : Runs validation tools, and refuses unclean code (will be executed on every _commit_)
 - `fix` : Fixes linter errors (run it if `lint` growls on your code !)
 
-## FAQ
-
-### Tools
-
-- _Concurrently_ : Allows for several commands to run concurrently in the same CLI
-- _Husky_ : Allows to execute specific commands that trigger on _git_ events
-- _Vite_ : Alternative to _Create-React-App_, packaging less tools for a more fluid experience
-- _ESLint_ : "Quality of code" tool, ensures chosen rules will be enforced
-- _Prettier_ : "Quality of code" tool as well, focuses on the styleguide
-- _ Airbnb Standard_ : One of the most known "standards", even though it's not officially linked to ES/JS
-- _Nodemon_ : Allows to restart the server everytime a .js file is udated
