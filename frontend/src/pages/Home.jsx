@@ -2,7 +2,8 @@ export default function Home() {
   return (
     <div className="home">
       <h1>
-        PROJECT CREATED DURING CHECKPOINT 4 <br /> at WILD CODE SCHOOL in NANTES
+        PROJECT CREATED DURING CHECKPOINT 4 <br />{" "}
+        <span>at WILD CODE SCHOOL in NANTES</span>
       </h1>
       <div className="list-container">
         <ul>
