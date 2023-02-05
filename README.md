@@ -14,7 +14,7 @@ SIDE USER
     There are three main pages in navbar/menu burger that sort the data from the database:
         `Artists` button that displays a list of all Artists with image
         `Albums` button that displays a list of all albums with image
-        `Tracks` button that displays a list of all songs with image
+        `Tracks` button that displays a list of all songs
     Choosing:
         `artist card` - displays a list of albums of this artist with details and image
         `album card` - displays a list of tracks of this album with details and image
